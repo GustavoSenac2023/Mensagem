@@ -29,21 +29,28 @@ public class mensagemController {
             System.out.println("Erro na escrita do arquivo "+e.getMessage());
         }
     }
-    public void outputMensagem(){
+    public String outputMensagem(){
+        Mensagem m= new Mensagem();
         try {
-            Mensagem m= new Mensagem();
+            
             Random random = new Random();
             FileReader fr = new FileReader("src/mensagem.txt");
             BufferedReader bf= new BufferedReader(fr);
             String line=bf.readLine();
+            int cont=0;
             while(line!=null){
                 m.setMensagem(line);
-                System.out.println(m.getMensagem());
+                cont++;
                 line=bf.readLine();
+                int i =random.nextInt(2);
+                if(i % 2 == 0){
+                    return m.getMensagem();
+                }
             }
             bf.close();
         } catch (IOException e) {
             System.out.println("Erro na leitura do arquivo "+e.getMessage());
         }
+        return m.getMensagem();
     }
 }
