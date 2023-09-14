@@ -22,7 +22,7 @@ public class mensagemController {
     }
     public void inputMensagem(String mensagem){
         try {
-            FileWriter fw = new FileWriter("src/mensagem.txt");
+            FileWriter fw = new FileWriter("src/mensagem.txt",true);
             fw.write(mensagem);
             fw.close();
         } catch (IOException e) {
