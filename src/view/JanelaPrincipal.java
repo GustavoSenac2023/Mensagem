@@ -1,9 +1,9 @@
 package view;
 
 
+import controller.mensagemController;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -36,7 +36,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabelCabecalho = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextMensagemTexto = new javax.swing.JTextArea();
         jButtonEnviarMensagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,9 +54,9 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Mensagem");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextMensagemTexto.setColumns(20);
+        jTextMensagemTexto.setRows(5);
+        jScrollPane1.setViewportView(jTextMensagemTexto);
 
         jButtonEnviarMensagem.setText("Enviar Mensagem");
         jButtonEnviarMensagem.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +110,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonMensagemActionPerformed
 
     private void jButtonEnviarMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarMensagemActionPerformed
-        
+        mensagemController mensagemControler = new mensagemController();
+        mensagemControler.inputMensagem(jTextMensagemTexto.getText());
+        JOptionPane.showMessageDialog(null, "Enviada");
+        jTextMensagemTexto.setText("");
     }//GEN-LAST:event_jButtonEnviarMensagemActionPerformed
 
     /**
@@ -154,6 +157,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelCabecalho;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextMensagemTexto;
     // End of variables declaration//GEN-END:variables
 }
