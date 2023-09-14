@@ -5,8 +5,12 @@
  */
 package controller;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
+import model.Mensagem;
 
 /**
  *
@@ -23,6 +27,23 @@ public class mensagemController {
             fw.close();
         } catch (IOException e) {
             System.out.println("Erro na escrita do arquivo "+e.getMessage());
+        }
+    }
+    public void outputMensagem(){
+        try {
+            Mensagem m= new Mensagem();
+            Random random = new Random();
+            FileReader fr = new FileReader("src/mensagem.txt");
+            BufferedReader bf= new BufferedReader(fr);
+            String line=bf.readLine();
+            while(line!=null){
+                m.setMensagem(line);
+                System.out.println(m.getMensagem());
+                line=bf.readLine();
+            }
+            bf.close();
+        } catch (IOException e) {
+            System.out.println("Erro na leitura do arquivo "+e.getMessage());
         }
     }
 }
