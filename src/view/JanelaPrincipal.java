@@ -106,7 +106,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMensagemActionPerformed
-        JOptionPane.showMessageDialog(null, "");
+        mensagemController mensagemControler = new mensagemController();
+        JOptionPane.showMessageDialog(null,mensagemControler.outputMensagem());
     }//GEN-LAST:event_jButtonMensagemActionPerformed
 
     private void jButtonEnviarMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarMensagemActionPerformed
