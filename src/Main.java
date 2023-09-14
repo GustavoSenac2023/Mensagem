@@ -21,6 +21,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         try {
             Mensagem m= new Mensagem();
             FileReader fr = new FileReader("src/mensagem.txt");
