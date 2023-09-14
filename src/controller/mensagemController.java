@@ -23,7 +23,7 @@ public class mensagemController {
     public void inputMensagem(String mensagem){
         try {
             FileWriter fw = new FileWriter("src/mensagem.txt",true);
-            fw.write(mensagem);
+            fw.write(mensagem+"\n");
             fw.close();
         } catch (IOException e) {
             System.out.println("Erro na escrita do arquivo "+e.getMessage());
